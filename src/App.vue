@@ -13,7 +13,8 @@
   font-size: 62.5%;
 }
 
-html *, body * {
+html *,
+body * {
   box-sizing: border-box;
 }
 

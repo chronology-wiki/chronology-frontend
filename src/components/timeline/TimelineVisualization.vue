@@ -1,42 +1,42 @@
 <template>
-<div class="timeline-visualization">
-  <button class="event-button" v-for="evt in events" v-bind:key="evt.name">
-    <div class="event-left">
-      {{ formatDate(evt.date) }}
-      <div class="timeline-circle"></div>
-    </div>
-    <div class="event-right">
-      {{ evt.name }}
-    </div>
-  </button>
-</div>
+  <div class="timeline-visualization">
+    <button class="event-button" v-for="evt in events" v-bind:key="evt.name">
+      <div class="event-left">
+        {{ formatDate(evt.date) }}
+        <div class="timeline-circle"></div>
+      </div>
+      <div class="event-right">
+        {{ evt.name }}
+      </div>
+    </button>
+  </div>
 </template>
 
 <script>
-import dayjs from 'dayjs'
+import dayjs from "dayjs";
 
 export default {
-  props: ['events'],
+  props: ["events"],
   methods: {
     formatDate(date) {
-      if (typeof date === 'string') {
-        return dayjs(date).format('YYYY-MMM-D')
+      if (typeof date === "string") {
+        return dayjs(date).format("YYYY-MMM-D");
       } else {
-        return date.year
+        return date.year;
       }
     }
   }
-}
+};
 </script>
 
 <style lang="css" scoped>
 .timeline-circle {
   position: absolute;
-  top: calc(50% - .8rem);
+  top: calc(50% - 0.8rem);
   right: -1rem;
   width: 1.6rem;
   height: 1.6rem;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   min-height: 1.6rem;
   box-shadow: 0 10rem 40rem -24rem #393b3f;
   border: 1px solid black;
@@ -44,15 +44,15 @@ export default {
 }
 
 .event-left {
-  padding: .8rem;
+  padding: 0.8rem;
   width: 20%;
   position: relative;
   margin-right: 1.6rem;
-  border-right: .4rem solid darkgray;
+  border-right: 0.4rem solid darkgray;
 }
 
 .event-right {
-  padding: .8rem;
+  padding: 0.8rem;
 }
 
 .event-button {
